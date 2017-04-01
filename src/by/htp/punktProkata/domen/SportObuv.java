@@ -8,11 +8,12 @@ private final int size;
 		this.size = size;
 	}
 
-	@Override
-	public String toString() {
-		return "SportObuv [size=" + size + "]";
+	public int getSize() {
+		return size;
 	}
 	
-	
+	public void print() {
+		System.out.println(getTitle()+ " " + getCategory() + " size:" + size);
+	}
 
 }

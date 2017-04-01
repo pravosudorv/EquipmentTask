@@ -5,19 +5,27 @@ public abstract class Equipment {
 	private String title;
 
 	enum Category {
-		ZimaSport, LetoSport, Aksesuar, Transport 
+		ZimaSport, LetoSport, Aksesuar, Transport
 	}
-	
+
 	Equipment(Category category, String title) {
 		this.category = category;
 		this.title = title;
 	}
 
-	@Override
-	public String toString() {
-		return "Equipment [category=" + category + ", title=" + title + "]";
+	public Category getCategory() {
+		return category;
+	}
+
+	public String getTitle() {
+		return title;
 	}
 	
-	
-	
+	public abstract void print();
+
+	@Override
+	public String toString() {
+		return "Equipment [category=" + category + ", title=" + title + " ";
+	}
+
 }

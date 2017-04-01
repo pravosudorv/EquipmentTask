@@ -5,6 +5,4 @@ public class Konki extends SportObuv{
 		super(Category.LetoSport,  title,  size);
 	}
 	
-	
-
 }
