@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		RentStation station = new RentStation();
-		ArrayList<Equipment> ren =  station.renStation;
+		ArrayList<Equipment> ren =  station.listEquipment;
 		RentUnit unit;
 		
 		
@@ -29,6 +29,10 @@ public class Main {
 		//unit.delRentEquipment(2);
 		//System.out.println(ren);
 		//System.out.println(unit.getUnits());
+		Manager.printSpisokDostupnogo(station);
+		
+		unit.delRentEquipmentAll();
+		System.out.println();
 		Manager.printSpisokDostupnogo(station);
 	}
 

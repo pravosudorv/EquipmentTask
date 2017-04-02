@@ -28,8 +28,11 @@ public class RentUnit {
 		if (units.length <= MAX_SIZE) {
 			cloned();
 			units[index] = new RentEquipment(equipment);
+		} else{ 
+			System.out.println("blolshe brat nelzya");
 		}
 	}
+		
 	
 	private void cloned() {
 		RentEquipment[] newUnits = new RentEquipment[units.length + 1];
@@ -44,6 +47,13 @@ public class RentUnit {
 		units[index - 1] = null;
 		sdvig(index);
 		aCloned();
+	}
+	
+	public void delRentEquipmentAll() {
+		for(RentEquipment i : units) {
+			i.delEquipment();
+		}
+		units = null;
 	}
 
 	private void sdvig(int index) {
