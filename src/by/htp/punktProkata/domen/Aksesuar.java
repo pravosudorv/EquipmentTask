@@ -1,8 +1,5 @@
 package by.htp.punktProkata.domen;
 
-import by.htp.punktProkata.domen.*;
-import by.htp.punktProkata.domen.Equipment.Category;
-
 public abstract class Aksesuar extends Equipment {
 	private final int size;
 	
@@ -11,8 +8,4 @@ public abstract class Aksesuar extends Equipment {
 		this.size = size;
 	}
 
-	@Override
-	public String toString() {
-		return "Aksesuar [size=" + size + "]";
-	}
 }

@@ -12,8 +12,5 @@ private final int size;
 		return size;
 	}
 	
-	public void print() {
-		System.out.println(getTitle()+ " " + getCategory() + " size:" + size);
-	}
-
+	
 }

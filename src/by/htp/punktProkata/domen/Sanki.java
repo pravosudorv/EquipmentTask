@@ -1,7 +1,5 @@
 package by.htp.punktProkata.domen;
 
-import by.htp.punktProkata.domen.Equipment.Category;
-
 public class Sanki extends Equipment{
 	private final int rost;
 	private final int maxMass;
