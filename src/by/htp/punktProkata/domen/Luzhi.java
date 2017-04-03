@@ -7,4 +7,10 @@ public class Luzhi extends Equipment{
 		super(Category.ZimaSport, title);
 		this.rost = rost;
 	}
+
+	public int getRost() {
+		return rost;
+	}
+	
+	
 }
