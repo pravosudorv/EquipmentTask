@@ -5,8 +5,6 @@ public class Konki extends SportObuv{
 		super(Category.LetoSport,  title,  size);
 	}
 
-	
-	
 	@Override
 	public String toString() {
 		return   "\n" +"[Konki " + getTitle() + ", Size = " + getSize() + ", category = " + getCategory() + ", sdano = " + getSdano()
