@@ -1,4 +1,4 @@
-package by.htp.punktProkata.domen;
+package by.htp.punktProkata.domen.equipment;
 
 public class Luzhi extends Equipment{
 	private final int rost;

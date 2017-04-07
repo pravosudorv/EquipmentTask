@@ -1,4 +1,4 @@
-package by.htp.punktProkata.domen;
+package by.htp.punktProkata.domen.equipment;
 
 public abstract class SportObuv extends Equipment{
 private final int size; 

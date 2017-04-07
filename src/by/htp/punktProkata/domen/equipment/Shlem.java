@@ -1,4 +1,4 @@
-package by.htp.punktProkata.domen;
+package by.htp.punktProkata.domen.equipment;
 
 public class Shlem extends Aksesuar {
 

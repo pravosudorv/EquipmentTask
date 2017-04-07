@@ -1,4 +1,4 @@
-package by.htp.punktProkata.domen;
+package by.htp.punktProkata.domen.equipment;
 
 public class Roliki extends SportObuv{
 	 
@@ -8,7 +8,6 @@ public class Roliki extends SportObuv{
 	
 	@Override
 	public String toString() {
-		return   "\n" +"[Roliki " + getTitle() + ", Size = " + getSize() + ", category = " + getCategory() + ", sdano = " + getSdano()
-				+  "]" ;
+		return   "\n" +"[Roliki " + getTitle() + ", Size = " + getSize() + ", category = " + getCategory() +  "]" ;
 	}
 }

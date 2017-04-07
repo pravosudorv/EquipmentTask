@@ -1,8 +1,7 @@
-package by.htp.punktProkata.domen.client;
+package by.htp.punktProkata.domen;
 
-import java.util.Arrays;
-
-import by.htp.punktProkata.domen.*;
+import by.htp.punktProkata.domen.equipment.*;
+import by.htp.punktProkata.logica.Print;
 
 public class RentUnit {
 	private RentEquipment[] units;
@@ -32,7 +31,7 @@ public class RentUnit {
 			cloned();
 			units[index] = new RentEquipment(equipment, rentTime);
 		} else {
-			System.out.println("bolshe brat nelzya");
+			Print.maxSize();
 		}
 	}
 
@@ -45,7 +44,7 @@ public class RentUnit {
 	}
 
 	public void delRentEquipment(int index) {
-		units[index - 1].delEquipment();
+		
 		units[index - 1] = null;
 		sdvig(index);
 		aCloned();
@@ -53,7 +52,7 @@ public class RentUnit {
 
 	public void delRentEquipmentAll() {
 		for (RentEquipment i : units) {
-			i.delEquipment();
+		
 		}
 		units = null;
 	}

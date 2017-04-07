@@ -28,7 +28,7 @@ public class Manager {
 			if (title.equalsIgnoreCase(i.getTitle())) {
 				if (i instanceof Konki) { // "class
 											// by.htp.punktProkata.domen.Konki".equals(i.getClass())
-					Konki equipment = (Konki) i;
+					Konki equipment = (Konki) i.getClass() == Roliki.class
 
 					if (size == equipment.getSize()) {
 						print(i);

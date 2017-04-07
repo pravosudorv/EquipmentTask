@@ -1,4 +1,4 @@
-package by.htp.punktProkata.domen.client;
+package by.htp.punktProkata.domen;
 
 public class Client {
 	private RentUnit rentUnit;
@@ -16,7 +16,4 @@ public class Client {
 		return rentUnit.getUnits();
 	}
 	
-	public void setRentUnit(RentUnit rentUnit) {
-		this.rentUnit = rentUnit;
-	}
 }
