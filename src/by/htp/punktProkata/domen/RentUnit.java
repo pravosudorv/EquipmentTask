@@ -6,8 +6,12 @@ import by.htp.punktProkata.logica.Print;
 public class RentUnit {
 	private RentEquipment[] units;
 	private static final int MAX_SIZE = 3;
+	
+	public RentUnit() {
+		units = new RentEquipment[0];
+	}
 
-	public RentUnit(Equipment equipment, int rentTime) {
+	/*public RentUnit(Equipment equipment, int rentTime) {
 		units = new RentEquipment[] { new RentEquipment(equipment, rentTime) };
 	}
 
@@ -20,7 +24,7 @@ public class RentUnit {
 		units = new RentEquipment[] { new RentEquipment(equipment1, rentTime), 
 				new RentEquipment(equipment2, rentTime), new RentEquipment(equipment3, rentTime) };
 	}
-
+*/
 	public RentEquipment[] getUnits() {
 		return units;
 	}
@@ -48,13 +52,6 @@ public class RentUnit {
 		units[index - 1] = null;
 		sdvig(index);
 		aCloned();
-	}
-
-	public void delRentEquipmentAll() {
-		for (RentEquipment i : units) {
-		
-		}
-		units = null;
 	}
 
 	private void sdvig(int index) {

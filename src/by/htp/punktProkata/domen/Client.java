@@ -2,14 +2,15 @@ package by.htp.punktProkata.domen;
 
 public class Client {
 	private RentUnit rentUnit;
-	private String fio;
+	private final String fio;
 	
+	public Client(String fio) {
+		this.fio = fio;
+		rentUnit = new RentUnit();
+	}
 	
 	public String getFio() {
 		return fio;
-	}
-	public void setFio(String fio) {
-		this.fio = fio;
 	}
 	
 	public RentEquipment[] getRentUnit() {
