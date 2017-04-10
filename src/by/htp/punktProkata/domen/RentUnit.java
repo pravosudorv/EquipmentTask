@@ -1,41 +1,46 @@
 package by.htp.punktProkata.domen;
 
 import by.htp.punktProkata.domen.equipment.*;
-import by.htp.punktProkata.logica.Print;
+import by.htp.punktProkata.logic.Print;
 
 public class RentUnit {
 	private RentEquipment[] units;
 	private static final int MAX_SIZE = 3;
-	
+
 	public RentUnit() {
 		units = new RentEquipment[0];
 	}
 
-	/*public RentUnit(Equipment equipment, int rentTime) {
-		units = new RentEquipment[] { new RentEquipment(equipment, rentTime) };
-	}
-
-	public RentUnit(Equipment equipment1, Equipment equipment2, int rentTime) {
-		units = new RentEquipment[] { new RentEquipment(equipment1, rentTime),
-				new RentEquipment(equipment2, rentTime) };
-	}
-
-	public RentUnit(Equipment equipment1, Equipment equipment2, Equipment equipment3, int rentTime) {
-		units = new RentEquipment[] { new RentEquipment(equipment1, rentTime), 
-				new RentEquipment(equipment2, rentTime), new RentEquipment(equipment3, rentTime) };
-	}
-*/
+	/*
+	 * public RentUnit(Equipment equipment, int rentTime) { units = new
+	 * RentEquipment[] { new RentEquipment(equipment, rentTime) }; }
+	 * 
+	 * public RentUnit(Equipment equipment1, Equipment equipment2, int rentTime)
+	 * { units = new RentEquipment[] { new RentEquipment(equipment1, rentTime),
+	 * new RentEquipment(equipment2, rentTime) }; }
+	 * 
+	 * public RentUnit(Equipment equipment1, Equipment equipment2, Equipment
+	 * equipment3, int rentTime) { units = new RentEquipment[] { new
+	 * RentEquipment(equipment1, rentTime), new RentEquipment(equipment2,
+	 * rentTime), new RentEquipment(equipment3, rentTime) }; }
+	 */
 	public RentEquipment[] getUnits() {
 		return units;
 	}
 
 	public void addRentEquipment(Equipment equipment, int rentTime) {
-		int index = units.length;
-		if (units.length <= MAX_SIZE) {
-			cloned();
-			units[index] = new RentEquipment(equipment, rentTime);
-		} else {
-			Print.maxSize();
+		if (equipment != null) {
+			if (!Category.Aksesuar.equals(equipment.getCategory())) {
+				int index = units.length;
+				if (units.length <= MAX_SIZE) {
+					cloned();
+					units[index] = new RentEquipment(equipment, rentTime);
+				} else {
+					Print.maxSize();
+				}
+			} else {
+				Print.nix();
+			}
 		}
 	}
 
@@ -48,8 +53,8 @@ public class RentUnit {
 	}
 
 	public void delRentEquipment(int index) {
-		
-		units[index - 1] = null;
+
+		units[index] = null;
 		sdvig(index);
 		aCloned();
 	}

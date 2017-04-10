@@ -6,8 +6,8 @@ import java.util.Date;
 public  class RentEquipment {
 	private Equipment equipment;
 	private final Date date;
+	private Aksesuar[] aksesuar;
 	private long rentTimeInMillis;
-	
 	
 	public RentEquipment(Equipment equipment, int rentTime) {
 		this.equipment = equipment;
@@ -15,6 +15,17 @@ public  class RentEquipment {
 		setRentTimeInMillis(rentTime);
 	}
 	
+	public RentEquipment(Equipment equipment, Aksesuar[] aksesuar, int rentTime) {
+		this.equipment = equipment;
+		this.date = new Date();
+		this.aksesuar = aksesuar;
+		setRentTimeInMillis(rentTime);
+	}
+	
+	public Equipment getEquipment() {
+		return equipment;
+	}
+
 	public Date getDate() {
 		return date;
 	}

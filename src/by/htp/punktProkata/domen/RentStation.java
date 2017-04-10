@@ -24,7 +24,22 @@ public class RentStation {
 		}
 	}
 	
-	public Client[] getListClient(Client client) {
+	public void delEquipment(Equipment equipment) {
+		if(equipment != null) {
+			for(int i = 0; i < sizeListEquipment; i++) {
+				if(equipment == listEquipment[i]) {
+					listEquipment[i] = null;
+					shifting(i);
+				}
+			}
+		}
+	}
+	
+	public int getSizeListEquipment() {
+		return sizeListEquipment;
+	}
+	
+	public Client[] getListClient() {
 		return listClient;
 	}
 
@@ -51,5 +66,13 @@ public class RentStation {
 			newListClient[i] = listClient[i];
 		}
 		listClient = newListClient;
+	}
+	
+	private void shifting(int index) {
+		for(int i = index; i < sizeListEquipment - 1; i++) {
+			listEquipment[i] = listEquipment[i+1];
+		}
+		listEquipment[sizeListEquipment] = null;
+		sizeListEquipment--;
 	}
 }
