@@ -1,6 +1,7 @@
 package by.htp.punktProkata.domen;
 
 import by.htp.punktProkata.domen.equipment.*;
+import java.io.File;
 
 public class RentStation {
 	private Equipment[] listEquipment = new Equipment[10];
@@ -8,9 +9,15 @@ public class RentStation {
 	
 	private Client[] listClient = new Client[10];
 	private int sizeListClient = 0;
-
+	
+	File file = new File("C:\\Users\\ÂÈÊÒÎĞ\\Google Äèñê\\workspace\\PynktProkata\\src\\by\\htp\\punktProkata\\domen\\ListEquipment.txt");
+							
 	public Equipment[] getListEquipment() {
 		return listEquipment;
+	}
+	
+	public File getFile() {
+		return file;
 	}
 
 	public void addEquipment(Equipment equipment) {
@@ -75,4 +82,6 @@ public class RentStation {
 		listEquipment[sizeListEquipment] = null;
 		sizeListEquipment--;
 	}
+
+	
 }

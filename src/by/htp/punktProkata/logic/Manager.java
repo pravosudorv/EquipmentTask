@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Manager {
 
-	public static void showSpisokDostupnogo(RentStation rentStation) {
+	public static void showListAccessibility(RentStation rentStation) {
 		if (rentStation != null) {
 			Print.printEquipment(rentStation.getListEquipment());
 		}
@@ -16,19 +16,13 @@ public class Manager {
 		if (rentStation != null) {
 
 			Client client = searchClient(rentStation, fio);
-			if (client == null) {
-				Print.noClient();
-				return;
-			}
-
 			Equipment equipment = showEquipment(rentStation, title, size);
-			if (equipment == null) {
-				Print.noEquipment();
-				return;
-			}
 
-			client.addEquipment(equipment, rentTime);
-			rentStation.delEquipment(equipment);
+			if (!checkForNull(client, equipment)) {
+
+				client.addEquipment(equipment, rentTime);
+				rentStation.delEquipment(equipment);
+			}
 		}
 	}
 
@@ -36,19 +30,27 @@ public class Manager {
 		if (rentStation != null) {
 
 			Client client = searchClient(rentStation, fio);
-			if (client == null) {
-				Print.noClient();
-				return;
-			}
-
 			Equipment equipment = showEquipmentClient(client, title, size);
-			if (equipment == null) {
-				Print.noEquipment();
-				return;
+
+			if (!checkForNull(client, equipment)) {
+
+				rentStation.addEquipment(equipment);
+				client.delEquipment(equipment);
 			}
-			rentStation.addEquipment(equipment);
-			client.delEquipment(equipment);
 		}
+	}
+
+	private static boolean checkForNull(Client client, Equipment equipment) {
+		if (client == null) {
+			Print.noClient();
+			return true;
+		}
+
+		if (equipment == null) {
+			Print.noEquipment();
+			return true;
+		}
+		return false;
 	}
 
 	public static void showEquipment(RentStation rentStation, String title) {
@@ -61,39 +63,6 @@ public class Manager {
 		}
 	}
 
-	private static Equipment showEquipmentClient(Client client, String title, int size) {
-		if (client != null) {
-			for (RentEquipment j : client.getRentUnit()) {
-				Equipment i = j.getEquipment();
-				if (title.equalsIgnoreCase(i.getTitle())) {
-
-					if (i instanceof Konki) {
-						Konki equipment = (Konki) i; // == Roliki.class
-
-						if (size == equipment.getSize()) {
-							return i;
-						}
-					}
-					if (i instanceof Roliki) {
-						Roliki equipment = (Roliki) i;
-
-						if (size == equipment.getSize()) {
-							return i;
-						}
-					}
-					if (i instanceof Luzhi) {
-						Luzhi equipment = (Luzhi) i;
-
-						if (size == equipment.getRost()) {
-							return i;
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-	
 	public static Equipment showEquipment(RentStation rentStation, String title, int size) {
 		if (rentStation != null) {
 			for (Equipment i : rentStation.getListEquipment()) {
@@ -139,6 +108,39 @@ public class Manager {
 	 * 
 	 * }
 	 */
+
+	private static Equipment showEquipmentClient(Client client, String title, int size) {
+		if (client != null) {
+			for (RentEquipment j : client.getRentUnit()) {
+				Equipment i = j.getEquipment();
+				if (title.equalsIgnoreCase(i.getTitle())) {
+
+					if (i instanceof Konki) {
+						Konki equipment = (Konki) i; // == Roliki.class
+
+						if (size == equipment.getSize()) {
+							return i;
+						}
+					}
+					if (i instanceof Roliki) {
+						Roliki equipment = (Roliki) i;
+
+						if (size == equipment.getSize()) {
+							return i;
+						}
+					}
+					if (i instanceof Luzhi) {
+						Luzhi equipment = (Luzhi) i;
+
+						if (size == equipment.getRost()) {
+							return i;
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
 
 	public static Client searchClient(RentStation rentStation, String fio) {
 		for (Client i : rentStation.getListClient()) {

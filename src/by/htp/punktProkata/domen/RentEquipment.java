@@ -25,6 +25,10 @@ public  class RentEquipment {
 	public Equipment getEquipment() {
 		return equipment;
 	}
+	
+	public Aksesuar[] getAksesuar() {
+		return aksesuar;
+	}
 
 	public Date getDate() {
 		return date;

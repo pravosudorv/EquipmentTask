@@ -19,13 +19,17 @@ public class Main {
 		
 		station.addClient(new Client("Ivanov Ivan"));
 		
-		Manager.showSpisokDostupnogo(station);
-		Manager.rent(station, "konki", 35, 5, "Ivanov Ivan");
+		//Manager.showListAccessibility(station);
 		
-		Manager.showSpisokDostupnogo(station);
+		
+		
+		ReadingRecord.writer(station);
+		/*Manager.rent(station, "konki", 35, 5, "Ivanov Ivan");
+		
+		Manager.showListAccessibility(station);
 		
 		Manager.recovery(station, "konki", 35, "Ivanov Ivan");
 		
-		Manager.showSpisokDostupnogo(station);
+		Manager.showListAccessibility(station);*/
 	}
 }
