@@ -23,7 +23,9 @@ public class Main {
 		
 		
 		
-		ReadingRecord.writer(station);
+		//ReadingRecord.writer(station); 
+		ReadingRecord.reader(station);
+		
 		/*Manager.rent(station, "konki", 35, 5, "Ivanov Ivan");
 		
 		Manager.showListAccessibility(station);
