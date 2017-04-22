@@ -1,87 +1,49 @@
 package by.htp.punktProkata.domen;
 
-import by.htp.punktProkata.domen.equipment.*;
+import by.htp.punktProkata.domen.equipment.Equipment;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RentStation {
-	private Equipment[] listEquipment = new Equipment[10];
-	private int sizeListEquipment = 0;
-	
-	private Client[] listClient = new Client[10];
-	private int sizeListClient = 0;
-	
-	File file = new File("C:\\Users\\ÂÈÊÒÎĞ\\Google Äèñê\\workspace\\PynktProkata\\src\\by\\htp\\punktProkata\\domen\\ListEquipment.txt");
+	private List<Equipment> listEquipment = new ArrayList<>();
+	private List<Client> listClient = new ArrayList<>();
+	private File file = new File("C:\\Users\\ÂÈÊÒÎĞ\\Google Äèñê\\workspace\\PynktProkata\\src\\by\\htp\\punktProkata\\domen\\ListEquipment.txt");
 							
-	public Equipment[] getListEquipment() {
-		return listEquipment;
-	}
-	
 	public File getFile() {
 		return file;
 	}
+	
+	public List<Equipment> getListEquipment() {
+		return listEquipment;
+	}
 
 	public void addEquipment(Equipment equipment) {
-		if (equipment != null) {
-			if (sizeListEquipment == listEquipment.length) {
-				Equipment[] newListEquipment = new Equipment[listEquipment.length * 3 / 2 + 1];
-				cloned(newListEquipment);
-			}
-			listEquipment[sizeListEquipment] = equipment;
-			sizeListEquipment++;
-		}
+		listEquipment.add(equipment);
 	}
 	
 	public void delEquipment(Equipment equipment) {
-		if(equipment != null) {
-			for(int i = 0; i < sizeListEquipment; i++) {
-				if(equipment == listEquipment[i]) {
-					listEquipment[i] = null;
-					shifting(i);
-				}
-			}
-		}
+		listEquipment.remove(equipment);
 	}
 	
 	public int getSizeListEquipment() {
-		return sizeListEquipment;
+		return listEquipment.size();
 	}
 	
-	public Client[] getListClient() {
+	public List<Client> getListClient() {
 		return listClient;
 	}
-
+	
 	public void addClient(Client client) {
-		if (client != null) {
-			if (sizeListClient == listClient.length) {
-				Client[] newListClient = new Client[listClient.length * 3 / 2 + 1];
-				cloned(newListClient);
-			}
-			listClient[sizeListClient] = client;
-			sizeListEquipment++;
-		}
+		listClient.add(client);
 	}
 	
-	private void cloned(Equipment[] newListEquipment) {
-		for (int i = 0; i < listEquipment.length; i++) {
-			newListEquipment[i] = listEquipment[i];
-		}
-		listEquipment = newListEquipment;
+	public void delClient(Client client) {
+		listClient.remove(client);
 	}
 	
-	private void cloned(Client[] newListClient) {
-		for (int i = 0; i < listClient.length; i++) {
-			newListClient[i] = listClient[i];
-		}
-		listClient = newListClient;
+	public int getSizeListClient() {
+		return listClient.size();
 	}
-	
-	private void shifting(int index) {
-		for(int i = index; i < sizeListEquipment - 1; i++) {
-			listEquipment[i] = listEquipment[i+1];
-		}
-		listEquipment[sizeListEquipment] = null;
-		sizeListEquipment--;
-	}
-
 	
 }
