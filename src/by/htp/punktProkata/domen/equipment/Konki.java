@@ -29,7 +29,7 @@ public class Konki extends SportObuv{
 	
 	@Override
 	public String toString() {
-		return   super.toString() +"\n" +"[Konki " + getTitle() + ", Size = " + getSize() + ", category = " + getCategory() + "]" ;
+		return   super.toString() +"\n" +"Konki " + getTitle() + ", Size = " + getSize() + ", category = " + getCategory() + "]" ;
 	}
 	
 }

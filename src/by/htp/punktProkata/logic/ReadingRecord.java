@@ -36,7 +36,7 @@ public class ReadingRecord {
 			try(BufferedReader reader = new BufferedReader(new FileReader(station.getFile()))) {
 				String line = null;
 				while((line = reader.readLine()) != null) {
-					System.out.println(line);
+					
 				}
 				
 			} catch(IOException ex) {
