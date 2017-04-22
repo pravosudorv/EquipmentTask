@@ -3,6 +3,7 @@ package by.htp.punktProkata.domen;
 import by.htp.punktProkata.domen.equipment.*;
 import java.io.File;
 
+
 public class RentStation {
 	private Equipment[] listEquipment = new Equipment[10];
 	private int sizeListEquipment = 0;
